@@ -14,7 +14,7 @@
         compatible = "zmk,keymap";
 
         qwerty {
-            display-name = "qwerty";
+            display-name = "QWERTY";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
@@ -31,7 +31,7 @@
         };
 
         number {
-            display-name = "number";
+            display-name = "NUMBER";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
@@ -40,15 +40,15 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &mt ESC NUMBER_1  &kp N2          &kp N3          &kp N4          &kp N5             &kp N6         &kp N7     &kp N8     &kp N9      &kp N0     &kp BSPC
-&bt BT_CLR  &kp LEFT_SHIFT    &msc SCRL_DOWN  &msc SCRL_UP    &mmv MOVE_UP    &mkp LCLK          &mkp LCLK      &mkp RCLK  &kp FSLH   &kp MINUS   &kp EQUAL  &kp DEL
-&kp LSHFT   &mo 3             &bootloader     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &kp SEMICOLON  &kp SQT    &kp COMMA  &kp PERIOD  &kp CAPS   &trans
-                                              &kp LGUI        &trans          &sys_reset         &kp LBKT       &mo 3      &kp RBKT
+&kp TAB     &mt ESC NUMBER_1  &kp N2          &kp N3          &kp N4          &kp N5             &kp N6            &kp N7     &kp N8     &kp N9        &kp N0     &kp BSPC
+&bt BT_CLR  &kp LEFT_SHIFT    &msc SCRL_DOWN  &msc SCRL_UP    &mmv MOVE_UP    &mkp LCLK          &mkp LCLK         &mkp RCLK  &kp FSLH   &kp KP_MINUS  &kp EQUAL  &kp DEL
+&kp LSHFT   &mo 3             &bootloader     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &kp SEMICOLON     &kp SQT    &kp COMMA  &kp PERIOD    &kp CAPS   &trans
+                                              &kp LGUI        &trans          &sys_reset         &kp LEFT_BRACKET  &mo 3      &kp RBKT
             >;
         };
 
         function {
-            display-name = "function";
+            display-name = "FUNCTION";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
@@ -57,9 +57,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp F1  &kp F2   &kp F3   &kp F4   &none     &sys_reset   &bootloader    &none             &none              &kp BSPC         &kp BSPC
-&kp LCTRL  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp HOME     &kp END        &kp BACKSLASH     &kp C_PLAY_PAUSE   &kp DELETE       &kp GRAVE
-&kp LSHFT  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp PAGE_UP  &kp PAGE_DOWN  &kp K_CALCULATOR  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp TILDE
+&kp TAB    &kp F1  &kp F2   &kp F3   &kp F4   &none     &sys_reset   &bootloader    &none                &none              &kp BSPC         &kp BSPC
+&kp LCTRL  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp HOME     &kp END        &kp BACKSLASH        &kp C_PLAY_PAUSE   &kp DELETE       &kp GRAVE
+&kp LSHFT  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp PAGE_UP  &kp PAGE_DOWN  &kp C_AL_CALCULATOR  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp TILDE
                             &trans   &mo 3    &trans    &kp HOME     &trans         &kp END
             >;
         };
@@ -72,15 +72,15 @@
                                     &trans        &trans        &trans          &trans  &trans  &trans
             >;
 
-            label = "option";
+            label = "OPTION";
         };
 
         LOCK {
             bindings = <
-&none   &none  &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
-&tog 4  &none  &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
-&none   &none  &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
-                      &none  &trans  &none    &none  &trans  &none
+&none   &none   &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
+&tog 4  &tog 4  &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
+&none   &none   &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
+                       &none  &trans  &none    &none  &trans  &none
             >;
 
             label = "LOCK";
