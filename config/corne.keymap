@@ -16,12 +16,12 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <1 2>;
+            key-positions = <1 0>;
         };
 
         esc {
             bindings = <&kp ESC>;
-            key-positions = <1 2 3>;
+            key-positions = <1 2 0>;
         };
     };
 
