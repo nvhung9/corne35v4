@@ -67,10 +67,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp F1  &kp F2   &kp F3   &kp F4   &trans      &sys_reset   &bootloader    &kp C_PAUSE          &kp PRINTSCREEN  &kp BSPC    &none
-&none  &kp F5  &kp F6   &kp F7   &kp F8   &mkp MB4    &kp C_MENU   &kp BACKSLASH  &kp SEMICOLON        &kp SQT          &kp DELETE  &none
-&none  &kp F9  &kp F10  &kp F11  &kp F12  &mkp MB5    &kp PAGE_UP  &kp PAGE_DOWN  &kp C_AL_CALCULATOR  &kp DOWN_ARROW   &mo 3       &none
-                        &trans   &mo 3    &trans      &kp HOME     &trans         &kp END
+&none  &kp F1          &kp F2   &kp F3   &kp F4   &kp F5      &sys_reset   &bootloader    &kp C_PAUSE          &kp PRINTSCREEN  &kp BSPC    &none
+&none  &kp LEFT_SHIFT  &kp F6   &kp F7   &kp F8   &mkp MB4    &kp C_MENU   &kp BACKSLASH  &kp SEMICOLON        &kp SQT          &kp DELETE  &none
+&none  &kp F9          &kp F10  &kp F11  &kp F12  &mkp MB5    &kp PAGE_UP  &kp PAGE_DOWN  &kp C_AL_CALCULATOR  &kp DOWN_ARROW   &mo 3       &none
+                                &trans   &mo 3    &trans      &kp HOME     &trans         &kp END
             >;
         };
 
