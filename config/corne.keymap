@@ -18,6 +18,11 @@
             bindings = <&kp TAB>;
             key-positions = <1 2>;
         };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <1 2 3>;
+        };
     };
 
     keymap {
