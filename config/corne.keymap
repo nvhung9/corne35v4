@@ -40,10 +40,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &mt ESC NUMBER_1  &kp N2          &kp N3          &kp N4          &kp N5             &kp N6            &kp N7     &kp N8     &kp N9      &kp N0     &kp BSPC
-&bt BT_CLR  &kp LEFT_SHIFT    &msc SCRL_DOWN  &msc SCRL_UP    &mmv MOVE_UP    &mkp LCLK          &mkp LCLK         &mkp RCLK  &kp FSLH   &kp MINUS   &kp EQUAL  &kp DEL
-&kp LSHFT   &mo 3             &bootloader     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &kp SEMICOLON     &kp SQT    &kp COMMA  &kp PERIOD  &kp CAPS   &trans
-                                              &kp LGUI        &trans          &sys_reset         &kp LEFT_BRACKET  &mo 3      &kp RBKT
+&none  &mt ESC NUMBER_1  &kp N2          &kp N3          &kp N4          &kp N5             &kp N6            &kp N7     &kp N8     &kp N9      &kp N0     &none
+&none  &kp LEFT_SHIFT    &msc SCRL_DOWN  &msc SCRL_UP    &mmv MOVE_UP    &mkp LCLK          &mkp LCLK         &mkp RCLK  &kp FSLH   &kp MINUS   &kp EQUAL  &none
+&none  &mo 3             &bootloader     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &kp SEMICOLON     &kp SQT    &kp COMMA  &kp PERIOD  &kp CAPS   &none
+                                         &kp LGUI        &trans          &sys_reset         &kp LEFT_BRACKET  &mo 3      &kp RBKT
             >;
         };
 
@@ -57,19 +57,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp F1  &kp F2   &kp F3   &kp F4   &trans    &sys_reset   &bootloader    &kp C_PAUSE          &kp PRINTSCREEN    &kp BSPC         &kp BSPC
-&kp LCTRL  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp C_MENU   &kp BACKSLASH  &kp SEMICOLON        &kp SQT            &kp DELETE       &kp GRAVE
-&kp LSHFT  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp PAGE_UP  &kp PAGE_DOWN  &kp C_AL_CALCULATOR  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp TILDE
-                            &trans   &mo 3    &trans    &kp HOME     &trans         &kp END
+&none  &kp F1  &kp F2   &kp F3   &kp F4   &trans    &sys_reset   &bootloader    &kp C_PAUSE          &kp PRINTSCREEN    &kp BSPC         &none
+&none  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp C_MENU   &kp BACKSLASH  &kp SEMICOLON        &kp SQT            &kp DELETE       &none
+&none  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp PAGE_UP  &kp PAGE_DOWN  &kp C_AL_CALCULATOR  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none
+                        &trans   &mo 3    &trans    &kp HOME     &trans         &kp END
             >;
         };
 
         option {
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans             &trans            &tog 4           &trans
-&trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans             &kp C_PREVIOUS    &kp C_NEXT       &trans
-&trans  &trans        &trans        &trans        &trans        &bt BT_CLR      &trans  &trans  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &trans
-                                    &trans        &trans        &trans          &trans  &trans  &trans
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans             &trans            &tog 4           &none
+&none  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans             &kp C_PREVIOUS    &kp C_NEXT       &none
+&none  &trans        &trans        &trans        &trans        &bt BT_CLR      &trans  &trans  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &none
+                                   &trans        &trans        &trans          &trans  &trans  &trans
             >;
 
             label = "OPTION";
