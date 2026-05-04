@@ -52,6 +52,13 @@
             tapping-term-ms = <400>;
             flavor = "tap-preferred";
         };
+
+        OFF: OFF {
+            compatible = "zmk,behavior-soft-off";
+            label = "OFF";
+            #binding-cells = <0>;
+            hold-time-ms = <3000>;
+        };
     };
 
     keymap {
