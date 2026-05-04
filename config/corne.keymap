@@ -14,14 +14,9 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <1 0>;
-        };
-
         esc {
             bindings = <&kp ESC>;
-            key-positions = <1 2 0>;
+            key-positions = <1 0>;
         };
     };
 
@@ -30,7 +25,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CTRLZ";
             #binding-cells = <0>;
-            bindings = <&ctrl_z 5 Z>, <&kp LC(Z)>;
+            bindings = <&mt LCTRL Z>, <&kp LC(Z)>;
         };
 
         spc_alt: spc_alt {
@@ -50,6 +45,24 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        q_tab: q_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Q_TAB";
+            bindings = <&kp Q>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_LCTL|MOD_LGUI)>;
+        };
+
+        A_Shift: A_Shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "A_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+        };
     };
 
     keymap {
@@ -65,10 +78,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q   &kp W  &kp E     &kp R  &kp T               &kp Y        &kp U  &kp I               &kp O                    &kp P            &none
-&none  &kp A   &kp S  &kp D     &kp F  &kp G               &kp H        &kp J  &kp K               &kp L                    &kp KP_ENTER     &none
-&none  &ctrlz  &kp X  &kp C     &kp V  &kp B               &kp N        &kp M  &kp LEFT_ARROW      &mt UP_ARROW DOWN_ARROW  &kp RIGHT_ARROW  &none
-                      &kp LGUI  &mo 1  &spc_alt 5 SPACE    &lt 3 SPACE  &mo 2  &mt LEFT_SHIFT INS
+&none  &q_tab                 &kp W  &kp E     &kp R  &kp T             &kp Y        &kp U  &kp I               &kp O                    &kp P            &none
+&none  &A_Shift LEFT_SHIFT A  &kp S  &kp D     &kp F  &kp G             &kp H        &kp J  &kp K               &kp L                    &kp KP_ENTER     &none
+&none  &ctrlz                 &kp X  &kp C     &kp V  &kp B             &kp N        &kp M  &kp LEFT_ARROW      &mt UP_ARROW DOWN_ARROW  &kp RIGHT_ARROW  &none
+                                     &kp LGUI  &mo 1  &mt LALT SPACE    &lt 3 SPACE  &mo 2  &mt LEFT_SHIFT INS
             >;
         };
 
@@ -84,7 +97,7 @@
             bindings = <
 &none  &mt ESC NUMBER_1  &kp N2          &kp N3          &kp N4          &kp N5             &kp N6            &kp N7     &kp N8     &kp N9      &kp N0     &none
 &none  &kp LEFT_SHIFT    &msc SCRL_DOWN  &msc SCRL_UP    &mmv MOVE_UP    &mkp LCLK          &mkp LCLK         &mkp RCLK  &kp FSLH   &kp MINUS   &kp EQUAL  &none
-&none  &mo 3             &bootloader     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &kp SEMICOLON     &kp SQT    &kp COMMA  &kp PERIOD  &kp CAPS   &none
+&none  &mo 3             &bootloader     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &trans            &trans     &kp COMMA  &kp PERIOD  &kp CAPS   &none
                                          &kp LGUI        &trans          &sys_reset         &kp LEFT_BRACKET  &mo 3      &kp RBKT
             >;
         };
@@ -99,10 +112,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp F1          &kp F2   &kp F3   &kp F4   &kp F5      &sys_reset   &bootloader    &kp C_PAUSE          &kp PRINTSCREEN  &kp BSPC    &none
-&none  &kp LEFT_SHIFT  &kp F6   &kp F7   &kp F8   &mkp MB4    &kp C_MENU   &kp BACKSLASH  &kp SEMICOLON        &kp SQT          &kp DELETE  &none
-&none  &kp F9          &kp F10  &kp F11  &kp F12  &mkp MB5    &kp PAGE_UP  &kp PAGE_DOWN  &kp C_AL_CALCULATOR  &kp DOWN_ARROW   &mo 3       &none
-                                &trans   &mo 3    &trans      &kp HOME     &trans         &kp END
+&none  &kp F1          &kp F2  &kp F3   &kp F4   &kp F5      &sys_reset   &bootloader    &kp C_PAUSE          &kp PRINTSCREEN  &kp BSPC    &none
+&none  &kp LEFT_SHIFT  &kp F6  &kp F7   &kp F8   &mkp MB4    &kp C_MENU   &kp BACKSLASH  &kp SEMICOLON        &kp SQT          &kp DELETE  &none
+&none  &kp LCTRL       &kp F9  &kp F10  &kp F11  &kp F12     &kp PAGE_UP  &kp PAGE_DOWN  &kp C_AL_CALCULATOR  &kp DOWN_ARROW   &mo 3       &none
+                               &trans   &mo 3    &trans      &kp HOME     &trans         &kp END
             >;
         };
 
