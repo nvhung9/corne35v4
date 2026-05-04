@@ -30,7 +30,25 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CTRLZ";
             #binding-cells = <0>;
-            bindings = <&mt LCTRL Z>, <&kp LC(Z)>;
+            bindings = <&ctrl_z 5 Z>, <&kp LC(Z)>;
+        };
+
+        spc_alt: spc_alt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPC_ALT";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        ctrl_z: ctrl_z {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CTRL_Z";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -47,10 +65,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q   &kp W  &kp E     &kp R  &kp T                 &kp Y        &kp U  &kp I               &kp O                    &kp P            &none
-&none  &kp A   &kp S  &kp D     &kp F  &kp G                 &kp H        &kp J  &kp K               &kp L                    &kp KP_ENTER     &none
-&none  &ctrlz  &kp X  &kp C     &kp V  &kp B                 &kp N        &kp M  &kp LEFT_ARROW      &mt DOWN_ARROW UP_ARROW  &kp RIGHT_ARROW  &none
-                      &kp LGUI  &mo 1  &mt LEFT_ALT SPACE    &lt 3 SPACE  &mo 2  &mt LEFT_SHIFT INS
+&none  &kp Q   &kp W  &kp E     &kp R  &kp T               &kp Y        &kp U  &kp I               &kp O                    &kp P            &none
+&none  &kp A   &kp S  &kp D     &kp F  &kp G               &kp H        &kp J  &kp K               &kp L                    &kp KP_ENTER     &none
+&none  &ctrlz  &kp X  &kp C     &kp V  &kp B               &kp N        &kp M  &kp LEFT_ARROW      &mt UP_ARROW DOWN_ARROW  &kp RIGHT_ARROW  &none
+                      &kp LGUI  &mo 1  &spc_alt 5 SPACE    &lt 3 SPACE  &mo 2  &mt LEFT_SHIFT INS
             >;
         };
 
@@ -101,13 +119,24 @@
 
         LOCK {
             bindings = <
-&none   &none   &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
-&tog 4  &tog 4  &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
-&none   &none   &none  &none  &none   &none    &none  &none   &none  &none  &none  &none
-                       &none  &trans  &none    &none  &trans  &none
+&none   &kp TAB  &none  &none  &none   &none           &none  &none   &none  &none  &none  &none
+&tog 4  &tog 4   &none  &none  &none   &none           &none  &none   &none  &none  &none  &none
+&none   &none    &none  &none  &none   &none           &none  &none   &none  &none  &none  &none
+                        &none  &trans  &kp LEFT_ALT    &none  &trans  &none
             >;
 
             label = "LOCK";
+        };
+
+        tab {
+            bindings = <
+&trans  &kp TAB  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                         &trans  &trans  &kp LEFT_ALT    &trans  &trans  &trans
+            >;
+
+            label = "tab";
         };
     };
 };
