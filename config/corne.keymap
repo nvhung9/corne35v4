@@ -14,14 +14,19 @@
     combos {
         compatible = "zmk,combos";
 
-        esc {
-            bindings = <&kp ESC>;
+        tab {
+            bindings = <&kp TAB>;
             key-positions = <1 0>;
         };
 
         caps {
             bindings = <&kp CAPSLOCK>;
             key-positions = <10 11 12>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <1 0 2>;
         };
     };
 
