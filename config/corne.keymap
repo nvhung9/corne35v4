@@ -40,7 +40,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CTRL_Z";
             #binding-cells = <0>;
-            bindings = <&mt LCTRL Z>, <&kp LC(Z)>;
+            bindings = <&fast_hold LCTRL Z>, <&kp LC(Z)>;
         };
 
         q_tab: q_tab {
@@ -67,6 +67,16 @@
             compatible = "zmk,behavior-soft-off";
             label = "OFF";
             #binding-cells = <0>;
+        };
+
+        fast_hold: fast_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FAST_HOLD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 
