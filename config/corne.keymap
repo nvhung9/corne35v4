@@ -41,6 +41,8 @@
             label = "CTRL_Z";
             #binding-cells = <0>;
             bindings = <&fast_hold LCTRL Z>, <&kp LC(Z)>;
+
+            tapping-term-ms = <300>;
         };
 
         q_tab: q_tab {
