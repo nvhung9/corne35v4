@@ -28,6 +28,11 @@
             bindings = <&kp ESC>;
             key-positions = <1 0 2>;
         };
+
+        ctrlZ {
+            bindings = <&kp LC(Z)>;
+            key-positions = <20 21 22>;
+        };
     };
 
     behaviors {
